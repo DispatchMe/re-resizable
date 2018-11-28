@@ -1,30 +1,9 @@
 {
   "extends": "airbnb",
   "parser": "babel-eslint",
-  "plugins": [
-    "flowtype"
-  ],
   "rules": {
     "react/prop-types": 0,
-    "flowtype/define-flow-type": 1,
-    "flowtype/require-parameter-type": 1,
     "no-duplicate-imports": 0,
-    "flowtype/require-return-type": [
-      1,
-      "always",
-      {
-        "annotateUndefined": "never"
-      }
-    ],
-    "flowtype/space-after-type-colon": [
-      1,
-      "always"
-    ],
-    "flowtype/space-before-type-colon": [
-      1,
-      "never"
-    ],
-    "flowtype/use-flow-type": 1,
     "prefer-destructuring": 0,
     "import/no-extraneous-dependencies": 0,
     "react/no-unused-prop-types": 0,
@@ -39,11 +18,6 @@
     "arrow-body-style": 0,
     "react/no-did-mount-set-state": 0,
     "jsx-a11y/href-no-hash": 0
-  },
-  "settings": {
-    "flowtype": {
-      "onlyFilesWithFlowAnnotation": false
-    }
   },
   "env": {
     "browser": true,

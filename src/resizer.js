@@ -1,6 +1,4 @@
-/* @flow */
-
-import * as React from 'react';
+import React from 'react';
 
 const styles = {
   base: {
@@ -70,22 +68,7 @@ const styles = {
   },
 };
 
-export type Direction = 'top' | 'right' | 'bottom' | 'left' | 'topRight' | 'bottomRight' | 'bottomLeft' | 'topLeft';
-
-export type OnStartCallback = (
-  e: SyntheticMouseEvent<HTMLDivElement> | SyntheticTouchEvent<HTMLDivElement>,
-  dir: Direction,
-) => void;
-
-export type Props = {
-  direction: Direction,
-  className?: string,
-  replaceStyles?: { [key: string]: string | number },
-  onResizeStart: OnStartCallback,
-  children: ?React.ChildrenArray<*>,
-};
-
-export default (props: Props): React.Element<'div'> => {
+export default (props) => {
   return (
     <div
       className={props.className}
@@ -94,10 +77,10 @@ export default (props: Props): React.Element<'div'> => {
         ...styles[props.direction],
         ...(props.replaceStyles || {}),
       }}
-      onMouseDown={(e: SyntheticMouseEvent<HTMLDivElement>) => {
+      onMouseDown={(e) => {
         props.onResizeStart(e, props.direction);
       }}
-      onTouchStart={(e: SyntheticTouchEvent<HTMLDivElement>) => {
+      onTouchStart={(e) => {
         props.onResizeStart(e, props.direction);
       }}
     >
